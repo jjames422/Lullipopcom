@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: 'Lullipop & Co.',
   description: 'Exquisite. Exclusive. Lullipop',
-  
+
   // Main navigation items for the e-commerce platform
   navItems: [
     {

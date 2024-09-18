@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import {
   Navbar as NextUINavbar,
@@ -13,7 +13,7 @@ import { Kbd } from '@nextui-org/kbd';
 import { Link } from '@nextui-org/link';
 import NextLink from 'next/link';
 import { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';  // Import framer-motion for animations
+import { motion } from 'framer-motion'; // Import framer-motion for animations
 
 import { siteConfig } from '@/config/site';
 import { ThemeSwitch } from '@/components/Theme-Switch';
@@ -29,7 +29,10 @@ export const Navbar = () => {
     const updateScrollDirection = () => {
       const scrollY = window.pageYOffset;
       const direction = scrollY > lastScrollY ? 'down' : 'up';
-      if (direction !== scrollDirection && Math.abs(scrollY - lastScrollY) > 10) {
+      if (
+        direction !== scrollDirection &&
+        Math.abs(scrollY - lastScrollY) > 10
+      ) {
         setScrollDirection(direction);
       }
       lastScrollY = scrollY > 0 ? scrollY : 0;
@@ -107,8 +110,8 @@ export const Navbar = () => {
                     index === 2
                       ? 'primary'
                       : index === siteConfig.navMenuItems.length - 1
-                      ? 'danger'
-                      : 'foreground'
+                        ? 'danger'
+                        : 'foreground'
                   }
                   href="#"
                   size="lg"

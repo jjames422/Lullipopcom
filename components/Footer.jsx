@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { siteConfig } from "@/config/site";
+import { motion } from 'framer-motion';
+import { siteConfig } from '@/config/site';
 import { Link } from '@nextui-org/link';
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const Footer = () => {
   const [showFooter, setShowFooter] = useState(false);
@@ -19,10 +19,10 @@ const Footer = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     // Cleanup event listener
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -33,13 +33,10 @@ const Footer = () => {
       transition={{ duration: 0.5 }}
     >
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-6">
-        
         {/* Brand Section */}
         <div className="space-y-4">
           <h2 className="text-xl font-bold">{siteConfig.name}</h2>
-          <p className="text-sm text-gray-400">
-            {siteConfig.description}
-          </p>
+          <p className="text-sm text-gray-400">{siteConfig.description}</p>
         </div>
 
         {/* Navigation Links */}
@@ -62,8 +59,17 @@ const Footer = () => {
           <div className="flex space-x-4">
             {/* Iterate over the social media links */}
             {Object.entries(siteConfig.links).map(([name, url], index) => (
-              <a key={index} href={url} target="_blank" rel="noopener noreferrer">
-                <img src={`/icons/${name}.svg`} alt={name} className="w-6 h-6 hover:opacity-75" />
+              <a
+                key={index}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={`/icons/${name}.svg`}
+                  alt={name}
+                  className="w-6 h-6 hover:opacity-75"
+                />
               </a>
             ))}
           </div>

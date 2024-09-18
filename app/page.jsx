@@ -1,7 +1,7 @@
 import { Link } from '@nextui-org/link';
 import { button as buttonStyles } from '@/components/Primitives';
 import { siteConfig } from '@/config/site';
-import Footer from "@/components/Footer"; // Import Footer component
+import Footer from '@/components/Footer'; // Import Footer component
 
 export default function Home() {
   return (
@@ -15,7 +15,7 @@ export default function Home() {
         }}
       >
         {/* Optional dark overlay for text readability */}
-        <div className="absolute inset-0 bg-black opacity-10"></div> 
+        <div className="absolute inset-0 bg-black opacity-10"></div>
 
         {/* Text with Shop Now Button positioned on the left side, like the Burberry layout */}
         <div className="absolute left-8 bottom-[20%] z-20 text-left text-white">
@@ -26,7 +26,7 @@ export default function Home() {
               color: 'primary',
               radius: 'full',
               variant: 'shadow',
-              size: 'lg', 
+              size: 'lg',
             })}
             href={siteConfig.links.docs}
           >
