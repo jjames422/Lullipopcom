@@ -1,0 +1,42 @@
+{
+  "lingerie": {
+    "name": "Lingerie Collection",
+    "description": "Our luxurious collection of handcrafted lingerie pieces.",
+    "products": [
+      {
+        "id": 1,
+        "name": "Red Lace Bra",
+        "price": 49.99,
+        "image": "https://via.placeholder.com/300x300.png?text=Red+Lace+Bra",
+        "slug": "red-lace-bra"
+      },
+      {
+        "id": 2,
+        "name": "Black Silk Nightgown",
+        "price": 79.99,
+        "image": "https://via.placeholder.com/300x300.png?text=Black+Silk+Nightgown",
+        "slug": "black-silk-nightgown"
+      }
+    ]
+  },
+  "loungewear": {
+    "name": "Loungewear Collection",
+    "description": "Comfy and stylish loungewear for everyday wear.",
+    "products": [
+      {
+        "id": 3,
+        "name": "Grey Cotton Pajamas",
+        "price": 39.99,
+        "image": "https://via.placeholder.com/300x300.png?text=Grey+Cotton+Pajamas",
+        "slug": "grey-cotton-pajamas"
+      },
+      {
+        "id": 4,
+        "name": "Pink Fleece Robe",
+        "price": 59.99,
+        "image": "https://via.placeholder.com/300x300.png?text=Pink+Fleece+Robe",
+        "slug": "pink-fleece-robe"
+      }
+    ]
+  }
+}

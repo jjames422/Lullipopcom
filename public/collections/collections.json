@@ -1,0 +1,11 @@
+{
+  "collections": [
+    {
+      "id": 1,
+      "slug": "lingerie",
+      "name": "Lingerie Collection",
+      "description": "Elegant and comfortable lingerie sets.",
+      "products": ["silk-bra", "lace-thong"]
+    }
+  ]
+}

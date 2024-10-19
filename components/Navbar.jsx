@@ -16,8 +16,7 @@ import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion'; // Import framer-motion for animations
 
 import { siteConfig } from '@/config/site';
-import { ThemeSwitch } from '@/components/Theme-Switch';
-import { SearchIcon } from '@/components/Icons';
+import { SearchIcon, UserIcon, ShoppingBagIcon } from '@/components/Icons'; // Import your icons here
 import Lullipopco from '@/components/LullipopLogo';
 
 export const Navbar = () => {
@@ -74,9 +73,9 @@ export const Navbar = () => {
   return (
     <motion.div
       initial="visible"
-      animate={scrollDirection === 'down' ? 'hidden' : 'visible'} // Animate based on scroll direction
+      animate={scrollDirection === 'down' ? 'hidden' : 'visible'}
       variants={navbarVariants}
-      transition={{ duration: 0.5 }} // Smooth transition duration
+      transition={{ duration: 0.5 }}
       className="sticky top-0 z-50 bg-transparent shadow-none"
     >
       <NextUINavbar maxWidth="xl" className="bg-transparent shadow-none">
@@ -97,7 +96,9 @@ export const Navbar = () => {
         </NavbarContent>
 
         <NavbarContent className="basis-1/5 sm:basis-full" justify="end">
-          <ThemeSwitch />
+          <SearchIcon className="w-6 h-6 mr-4 cursor-pointer" />
+          <UserIcon className="w-6 h-6 mr-4 cursor-pointer" />
+          <ShoppingBagIcon className="w-6 h-6 cursor-pointer" />
         </NavbarContent>
 
         <NavbarMenu>
