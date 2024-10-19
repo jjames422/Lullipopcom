@@ -1,19 +1,28 @@
-// Import the necessary components
-import Link from 'next/link';
+ // Import the necessary modules
+import fs from 'fs';
+import path from 'path';
 
-// Fetch data at runtime (server-side) using async/await
+// Read data from the local JSON file using fs
 async function getCollectionData(collection) {
-  const res = await fetch(`https://api.lullipop.com/collections/${collection}`);
-  if (!res.ok) {
-    throw new Error('Failed to fetch collection data');
+  // Resolve the path to the JSON file
+  const filePath = path.join(process.cwd(), 'public', 'collections', 'collections.json');
+  const jsonData = fs.readFileSync(filePath, 'utf-8');
+  const data = JSON.parse(jsonData);
+
+  // Find the specific collection by its slug
+  const collectionData = data.collections.find((col) => col.slug === collection);
+
+  if (!collectionData) {
+    throw new Error('Collection not found');
   }
-  return res.json();
+
+  return collectionData;
 }
 
 export default async function CollectionPage({ params }) {
   const { collection } = params;
 
-  // Fetch the collection data
+  // Fetch the collection data from the local JSON file
   const collectionData = await getCollectionData(collection);
 
   return (
@@ -23,13 +32,9 @@ export default async function CollectionPage({ params }) {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {collectionData.products.map((product) => (
-          <div key={product.id} className="border p-4">
-            <img src={product.image} alt={product.name} className="w-full h-64 object-cover mb-4" />
-            <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-            <p className="text-lg text-gray-600 mb-4">${product.price}</p>
-            <Link href={`/product/${product.slug}`}>
-              <a className="bg-teal-500 text-white px-4 py-2 rounded">View Product</a>
-            </Link>
+          <div key={product} className="border p-4">
+            {/* Display product details */}
+            <p>{product}</p>
           </div>
         ))}
       </div>
