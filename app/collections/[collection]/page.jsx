@@ -1,16 +1,23 @@
- // Import the necessary modules
+// Import the necessary modules
 import fs from 'fs';
 import path from 'path';
 
 // Read data from the local JSON file using fs
 async function getCollectionData(collection) {
   // Resolve the path to the JSON file
-  const filePath = path.join(process.cwd(), 'public', 'collections', 'collections.json');
+  const filePath = path.join(
+    process.cwd(),
+    'public',
+    'collections',
+    'collections.json'
+  );
   const jsonData = fs.readFileSync(filePath, 'utf-8');
   const data = JSON.parse(jsonData);
 
   // Find the specific collection by its slug
-  const collectionData = data.collections.find((col) => col.slug === collection);
+  const collectionData = data.collections.find(
+    (col) => col.slug === collection
+  );
 
   if (!collectionData) {
     throw new Error('Collection not found');

@@ -3,7 +3,12 @@ import path from 'path';
 import { NextResponse } from 'next/server';
 
 // Define the path to the collections.json file
-const filePath = path.join(process.cwd(), 'public', 'collections', 'collections.json');
+const filePath = path.join(
+  process.cwd(),
+  'public',
+  'collections',
+  'collections.json'
+);
 
 export async function GET(request, { params }) {
   const { slug } = params;
@@ -16,7 +21,10 @@ export async function GET(request, { params }) {
   const collection = collections.find((collection) => collection.slug === slug);
 
   if (!collection) {
-    return NextResponse.json({ message: 'Collection not found' }, { status: 404 });
+    return NextResponse.json(
+      { message: 'Collection not found' },
+      { status: 404 }
+    );
   }
 
   return NextResponse.json(collection, { status: 200 });

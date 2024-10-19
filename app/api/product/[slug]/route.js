@@ -3,7 +3,12 @@ import path from 'path';
 import { NextResponse } from 'next/server';
 
 // Define the path to the products.json file
-const filePath = path.join(process.cwd(), 'public', 'products', 'products.json');
+const filePath = path.join(
+  process.cwd(),
+  'public',
+  'products',
+  'products.json'
+);
 
 export async function GET(request, { params }) {
   const { slug } = params;

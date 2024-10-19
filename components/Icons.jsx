@@ -160,7 +160,6 @@ export const ShoppingBagIcon = (props) => (
   </svg>
 );
 
-
 export const UserIcon = (props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -178,4 +177,3 @@ export const UserIcon = (props) => (
     />
   </svg>
 );
-
